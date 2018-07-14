@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+
 import Link from 'gatsby-link'
 import IoCloseRound from 'react-icons/lib/io/close-round'
 import TiThMenu from 'react-icons/lib/ti/th-menu'

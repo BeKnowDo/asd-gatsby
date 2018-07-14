@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { colors, borders } from '../../style-variables'
 
 export const Sc_Header = styled.header`
-  padding: 10px 20px;
+  padding: 16px 20px 10px;
   position: fixed;
   top: 0;
   left: 0;
@@ -15,7 +15,7 @@ export const Sc_Header = styled.header`
 
   h1 {
     display: flex;
-    font-size: 2.2rem;
+    font-size: 1.5rem;
     align-items: center;
 
     > span {
@@ -32,6 +32,6 @@ export const Sc_Header = styled.header`
   }
   img {
     max-width: 100%;
-    width: 36px;
+    width: 30px;
   }
 `
