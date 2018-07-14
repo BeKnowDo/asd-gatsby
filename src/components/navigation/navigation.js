@@ -4,6 +4,7 @@ import Link from 'gatsby-link'
 import IoCloseRound from 'react-icons/lib/io/close-round'
 import TiThMenu from 'react-icons/lib/ti/th-menu'
 import { Sc_Navigation, Sc_Menu, Sc_CloseMenu } from './styles'
+import { navigationItems as data } from '../../data/navigation'
 
 class Navigation extends PureComponent {
   constructor() {
@@ -14,7 +15,27 @@ class Navigation extends PureComponent {
   }
 
   toggleNavigation = () => {
-    this.setState({ nav_open: !this.state.nav_open })
+    data.length > 0 ? this.setState({ nav_open: !this.state.nav_open }) : null
+  }
+
+  buildNavigationItems = data => {
+    if (data.length > 0) {
+      return (
+        <nav>
+          <ul>
+            {data.map((item, index) => {
+              return (
+                <li key={index}>
+                  <Link to={item.to} title={item.title}>
+                    {item.title}
+                  </Link>
+                </li>
+              )
+            })}
+          </ul>
+        </nav>
+      )
+    }
   }
   render() {
     return (
@@ -25,31 +46,7 @@ class Navigation extends PureComponent {
         <Sc_CloseMenu {...this.state} onClick={this.toggleNavigation}>
           <IoCloseRound size="28" />
         </Sc_CloseMenu>
-        <nav>
-          <ul>
-            <li>
-              <Link>Home</Link>
-            </li>
-            <li>
-              <Link>Features</Link>
-            </li>
-            <li>
-              <Link>Pricing &amp; Sign-up</Link>
-            </li>
-            <li>
-              <Link>Our Mission</Link>
-            </li>
-            <li>
-              <Link>Testimonials</Link>
-            </li>
-            <li>
-              <Link>Login</Link>
-            </li>
-            <li>
-              <Link>Blog</Link>
-            </li>
-          </ul>
-        </nav>
+        {this.buildNavigationItems(data)}
       </Sc_Navigation>
     )
   }
