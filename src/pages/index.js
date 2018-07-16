@@ -1,6 +1,8 @@
-import React from 'react'
-import Link from 'gatsby-link'
+import React from 'react';
+import Hero from '../components/hero';
 
-const Home = () => <div>Home Page Template</div>
+const Home = () => {
+  return <Hero />;
+};
 
-export default Home
+export default Home;
