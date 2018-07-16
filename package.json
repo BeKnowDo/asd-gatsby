@@ -4,13 +4,16 @@
   "version": "1.0.0",
   "author": "Cesar Perez <cesar@bkd.io>",
   "dependencies": {
+    "babel-jest": "^23.4.0",
     "gatsby": "^1.9.247",
     "gatsby-link": "^1.6.40",
+    "gatsby-plugin-google-analytics": "^1.0.31",
     "gatsby-plugin-react-helmet": "^2.0.10",
     "gatsby-plugin-styled-components": "^2.0.11",
-    "react-ga": "^2.5.3",
+    "react-animations": "^1.0.0",
     "react-helmet": "^5.2.0",
     "react-icons": "^2.2.7",
+    "react-router-dom": "^4.3.1",
     "styled-components": "^3.3.3"
   },
   "keywords": [
@@ -21,10 +24,45 @@
     "build": "gatsby build",
     "dev": "gatsby develop",
     "format": "prettier --write 'src/**/*.js'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "devDependencies": {
-    "prettier": "^1.12.0"
+    "babel-plugin-styled-components": "^1.5.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.4",
+    "gatsby-plugin-react-next": "^1.0.11",
+    "jest": "^23.4.1",
+    "prettier": "^1.12.0",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-test-renderer": "^16.4.1"
+  },
+  "jest": {
+    "transform": {
+      ".(js|jsx)": "babel-jest"
+    },
+    "testRegex": "(\\.(test|spec))\\.(jsx|js)$",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/.cache/"
+    ],
+    "modulePaths": [
+      "src"
+    ],
+    "moduleFileExtensions": [
+      "jsx",
+      "js"
+    ],
+    "coverageReporters": [
+      "lcov",
+      "text",
+      "html"
+    ],
+    "setupTestFrameworkScriptFile": "./src/setupTests.js"
   },
   "repository": {
     "type": "git",
