@@ -1,10 +1,7 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import ReactGA from 'react-ga'
+import React from 'react';
+import Helmet from 'react-helmet';
 
 const Head = () => {
-  ReactGA.initialize('UA-47961072-2')
-  ReactGA.pageview(window.location.pathname + window.location.search)
   return (
     <Helmet>
       <title>ASD Applied: Applied Behavior Analysis Data Insights</title>
@@ -122,7 +119,7 @@ const Head = () => {
       />
       <link rel="stylesheet" href="https://use.typekit.net/gsq2fod.css" />
     </Helmet>
-  )
-}
+  );
+};
 
-export default Head
+export default Head;
