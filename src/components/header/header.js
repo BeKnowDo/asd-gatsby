@@ -1,8 +1,8 @@
-import React from 'react'
-import Link from 'gatsby-link'
-import { Sc_Header } from './styles'
-import Navigation from '../navigation'
-import logo from '../../assets/images/logo.png'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Sc_Header } from './styles';
+import Navigation from '../navigation';
+import logo from '../../assets/images/logo.png';
 
 const Header = () => {
   return (
@@ -15,7 +15,7 @@ const Header = () => {
       </h1>
       <Navigation />
     </Sc_Header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
